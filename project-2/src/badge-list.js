@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit';
-import "./project-2.js";
+import "./edu-badge.js";
 
 export class BadgeList extends LitElement {
     static get tag() {
@@ -20,7 +20,7 @@ export class BadgeList extends LitElement {
     }
 
     async updateList(){
-       const address = new URL('../api/list', import.meta.url).href;
+       const address = new URL('../assets/list.json', import.meta.url).href;
        const data = await fetch(address).then((response) => {
         if (response.ok) {
             return response.json()
@@ -37,17 +37,19 @@ export class BadgeList extends LitElement {
     static get styles() {
         return css`
         :host {
-            display: block;
+            display: inline-block;
         }
         .wrapper {
             border: 2px solid black;
-            display: flex;
+            display: inline-block;
+            width: 100%;
         }
         .item {
-            display: inline-flex;
+            display: inline-block;
         }
     `;
     }
+
 
     render() {
         return html`
@@ -55,7 +57,7 @@ export class BadgeList extends LitElement {
         <div class="wrapper">
             ${this.badges.map(badge => html`
             <div class="item">
-                <project-2 name="${badge.name}" creator="${badge.creator}" image="${badge.image}" department="${badge.department}"></project-2>
+                <edu-badge name="${badge.name}" creator="${badge.creator}" image="${badge.image}" department="${badge.department}"></edu-badge>
             </div>
             `)}
         </div>

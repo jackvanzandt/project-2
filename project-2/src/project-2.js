@@ -18,118 +18,116 @@ class Project2 extends LitElement {
   }
 
   static styles = css`
-    @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
-
-* {
-  box-sizing: border-box;
+.search-container {
+	background-color: #f2f2f2;
+	padding: 100px;
+  width: 70%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  flex-direction: column;
+  
 }
-
-.cardTitle {
-  text-decoration: none;
-}
-.title {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-
-
-.wrapper {
-  display: inline-block;
-  width: 28%;
-  height: 200px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  border: 2px solid #fff;
-  border-color: #3e98d3;
-  border-left: 20px solid  #3e98d3;
-
-}
- .data {
-  float: right;
-  width: 60%;
+.explore-container {
+  width: 100%;
   height: 100%;
- 
+  background-color: #d3dce4;
+  display: flex;
+  flex-direction: column;
+  
 }
-.data .content {
-  padding: 10px;
-  position: flex;
+.explore-container h1 {
+  margin: 0;
+  padding-top: 50px;
+  padding-bottom: 15px;
+  padding-left: 80px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #5b5a5a;
 }
-.author {
-  font-size: 15px;
-  background-color: #cfe6f4;
-  margin-left: 0px;
-  text-align: left;
-  text-indent: 2%;
-  height: 40px;
+.search-container input[type="text"] {
+	padding: 20px;
+	border: none;
+	background-color: #fff;
+	font-size: 16px;
+	width: 60%;
+  margin: 0 10px 0 0;
+}
+.search-container button {
+	background-color: #4CAF50;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	cursor: pointer;
+	font-size: 16px;
+}
+.badge {
+	background-color: #4CAF50;
+	color: #fff;
+	padding: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.badge:hover {
+	background-color: #3e8e41;
+}
+.search-text {
+  font-size: 20px;
   font-family: sans-serif;
- 
-}
-.title {
-
-  margin-left: 10px;
   margin-bottom: 20px;
-  font-size: 30px;
-  
+  margin-right: 10px;
 }
-.text {
-  height: 15px;
-  font-family: sans-serif;
-  font-size: 15px;
-  margin-top: 25px;
+header {
+  background-color: white;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+.logo {
+  font-size: 18px;
+  font-style: und;
+  font-weight: bold;
+  color: #888;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.input-container {
+  display: flex;
+  align-items: center;
+}
+#search-input {
+  margin-right: 10px;
+  width: calc(100% - 120px);
+}
+#search-button {
   margin-left: 10px;
-  
 }
-
-.image {
-  float: right;
-  width: 40%;
-}
-.book-image {
-  width: 60%;
-  display: block;
-  height: 80%;
-  margin-top: 60px;
-  margin-left: 45px;
-  margin-bottom: auto;
+.content-wrapper {
+  overflow-y: scroll;
+  height: 100vh;
 }
   `;
 
-  constructor() {
-    super();
-    this.name = "APA Style Citations:   Introduction";
-    this.creator = "Creator: Victoria Bush";
-    this.image = "https://badgesapp.psu.edu/uploads/badge/image/337/APA_Style.png"
-    this.department = "Technology and Information";
-  }
-
   render() {
     return html`
-      <div class="wrapper">
-    <div class="image">
-      <img class="book-image"     src="${this.image}"/>
-     </div>
-     
-     <div class="author">
-      
-     ${this.department}
-    
-     </div>
-
-     <div class="title">${this.name}
-     </div>
-
-     <div class="text">${this.creator}</div>
-  
-     <div class="data">
-       <div class="content">
-       </div>
-     </div> 
-  </div>
- </div>
+       <div class="content-wrapper">
+        <header>
+          <div class="logo">Penn State Digital Badges</div>
+        </header>
+      <div class="explore-container">
+        <h1>Explore</h1>
+      <div class="search-container">
+        <div class="search-text">Explore our content in a self-guided manner. Want us to guide you through learning new skills? Try out Missions. Looking for other people with similar focus? Find them in Groups. Interested in viewing all the options within a certain subject area? You can do that with Topics.</div>
+          <div class="input-container">
+        <input type="text" id="search-input" placeholder="Search Content, Topics, and People">
+        <button id="search-button">Search</button>
+        </div>
+      </div>
+      <br>
     `;
   }
 }
