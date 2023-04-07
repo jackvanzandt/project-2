@@ -20,7 +20,7 @@ export class BadgeList extends LitElement {
     }
 
     async updateList(){
-       const address = new URL('../api/list', import.meta.url).href;
+       const address = new URL('../api/list.js', import.meta.url).href;
        const data = await fetch(address).then((response) => {
         if (response.ok) {
             return response.json()
