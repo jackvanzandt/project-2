@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit';
 
-const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
+
 
 class Project2 extends LitElement {
   static properties = {
@@ -8,79 +8,118 @@ class Project2 extends LitElement {
   }
 
   static styles = css`
-    :host {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      font-size: calc(10px + 2vmin);
-      color: #1a2b42;
-      max-width: 960px;
-      margin: 0 auto;
-      text-align: center;
-      background-color: var(--project-2-background-color);
-    }
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 
-    main {
-      flex-grow: 1;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    .logo {
-      margin-top: 36px;
-      animation: app-logo-spin infinite 20s linear;
-    }
+.cardTitle {
+  text-decoration: none;
+}
+.title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-    @keyframes app-logo-spin {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
 
-    .app-footer {
-      font-size: calc(12px + 0.5vmin);
-      align-items: center;
-    }
 
-    .app-footer a {
-      margin-left: 5px;
-    }
+.wrapper {
+  display: inline-block;
+  width: 28%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  border-color: #3e98d3;
+  border-left: 20px solid  #3e98d3;
+
+}
+ .data {
+  float: right;
+  width: 60%;
+  height: 100%;
+ 
+}
+.data .content {
+  padding: 10px;
+  position: flex;
+}
+.author {
+  font-size: 15px;
+  background-color: #cfe6f4;
+  margin-left: 0px;
+  text-align: left;
+  text-indent: 2%;
+  height: 40px;
+  font-family: sans-serif;
+ 
+}
+.title {
+
+  margin-left: 10px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  
+}
+.text {
+  height: 15px;
+  font-family: sans-serif;
+  font-size: 15px;
+  margin-top: 25px;
+  margin-left: 10px;
+  
+}
+
+.image {
+  float: right;
+  width: 40%;
+}
+.book-image {
+  width: 60%;
+  display: block;
+  height: 80%;
+  margin-top: 60px;
+  margin-left: 45px;
+  margin-bottom: auto;
+}
   `;
 
   constructor() {
     super();
-    this.header = 'My app';
+    this.name = "APA Style Citations:   Introduction";
+    this.creator = "Creator: Victoria Bush";
+    this.image = "https://badgesapp.psu.edu/uploads/badge/image/337/APA_Style.png"
+    this.department = "Technology and Information"
   }
 
   render() {
     return html`
-      <main>
-        <div class="logo"><img alt="open-wc logo" src=${logo} /></div>
-        <h1>${this.header}</h1>
+      <div class="wrapper">
+    <div class="image">
+      <img class="book-image"     src="${this.image}"/>
+     </div>
+     
+     <div class="author">
+      
+     ${this.department}
+    
+     </div>
 
-        <p>Edit <code>src/Project2.js</code> and save to reload.</p>
-        <a
-          class="app-link"
-          href="https://open-wc.org/guides/developing-components/code-examples/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Code examples
-        </a>
-      </main>
+     <div class="title">${this.name}
+     </div>
 
-      <p class="app-footer">
-        🚽 Made with love by
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/open-wc"
-          >open-wc</a
-        >.
-      </p>
+     <div class="text">${this.creator}</div>
+  
+     <div class="data">
+       <div class="content">
+       </div>
+     </div> 
+  </div>
+ </div>
     `;
   }
 }
