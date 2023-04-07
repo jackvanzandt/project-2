@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Caleb Pellerite",
+        "creator": "Caleb",
+        "image": "https://badgesapp.psu.edu/uploads/badge/image/337/APA_Style.png",
+        "department": "Food Science"
+      },
+      {
+        "name": "A Person",
+        "creator": "person",
+        "image": "https://badgesapp.psu.edu/uploads/badge/image/337/APA_Style.png",
+        "department": "person at person"
+      },
+      {
+        "name": "Bryan Ollendyke",
+        "creator": "Bryan Ollendyke",
+        "image": "https://badgesapp.psu.edu/uploads/badge/image/337/APA_Style.png",
+        "department": "IST"
+      }
+]

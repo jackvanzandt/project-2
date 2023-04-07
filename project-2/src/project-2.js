@@ -3,8 +3,18 @@ import { LitElement, html, css } from 'lit';
 
 
 class Project2 extends LitElement {
-  static properties = {
-    header: { type: String },
+  static get properties() {
+    return {
+      name: {
+        type: String,
+        reflect: true
+      },
+      creator: { type: String},
+      image: {
+        type: String,
+      },
+      department: { type: String},
+    }
   }
 
   static styles = css`
@@ -93,7 +103,7 @@ class Project2 extends LitElement {
     this.name = "APA Style Citations:   Introduction";
     this.creator = "Creator: Victoria Bush";
     this.image = "https://badgesapp.psu.edu/uploads/badge/image/337/APA_Style.png"
-    this.department = "Technology and Information"
+    this.department = "Technology and Information";
   }
 
   render() {
