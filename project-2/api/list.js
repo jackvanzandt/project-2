@@ -22,7 +22,7 @@ export default async function handler(req, res) {
       
     ];
     list.map((player) => {
-      player.index = player.name.toLowerCase() + " " + player.position.toLowerCase() + " " + player.top.toLowerCase();
+      player.index = player.name.toLowerCase() + " " + player.creator.toLowerCase() + " " + player.department.toLowerCase();
     });
     list = list.filter((player) => {
       return player.index.indexOf(search.toLowerCase()) > -1;

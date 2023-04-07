@@ -5,7 +5,7 @@ import "./search-widget.js";
 
 export class BadgeList extends LitElement {
     static get tag() {
-        return 'team-roster';
+        return 'badge-list';
     }
     static get properties() {
         return {
