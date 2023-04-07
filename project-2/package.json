@@ -16,9 +16,13 @@
     "start": "web-dev-server"
   },
   "dependencies": {
+    "@lrnwebcomponents/meme-maker": "^4.1.0",
+    "@lrnwebcomponents/simple-icon": "^4.2.0",
     "lit": "^2.0.2"
   },
   "devDependencies": {
+    "esbuild": "^0.17.8",
+    "rollup-plugin-copy": "^3.4.0",
     "@babel/preset-env": "^7.16.4",
     "@custom-elements-manifest/analyzer": "^0.4.17",
     "@open-wc/building-rollup": "^2.0.2",
