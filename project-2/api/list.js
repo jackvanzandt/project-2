@@ -1,6 +1,6 @@
 export default async function handler(request, res) {
 
-    const list = [
+    var list = [
         {
             "name": "Caleb Pellerite",
             "creator": "Caleb",
@@ -33,6 +33,12 @@ export default async function handler(request, res) {
           }
 
     ];
+    roster.map((badge) => {
+      badge.index = badge.name.toLowerCase() + " " + badge.position.toLowerCase() + " " + badge.top.toLowerCase();
+    });
+    list = roster.filter((player) => {
+      return player.index.indexOf(search.toLowerCase()) > -1;
+    });
     res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');
     res.setHeader("Access-Control-Allow-Credentials", "true");
     res.setHeader("Access-Control-Allow-Origin", "*");

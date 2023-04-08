@@ -16,39 +16,30 @@ export class BadgeList extends LitElement {
         super();
         this.badges = [];
         this.list = 'Badge List';
-        this.updateList();
-        this.searchForThis = '';
-        this.searchThis(this.badges,this.searchForThis);
-    }
-
-    async updateList(){
-       const address = '/api/list';
-       const data = await fetch(address).then((response) => {
-        if (response.ok) {
-            return response.json()
-        }
-        return [];
-    })
-    .then((data) => {
-        this.badges = data;
-    });
-       console.log(data);
-       
-    }
-
-    searchThis(items, searchForThis){
-      return items.filter((thing) => 
-      {
-        for (var item in thing)
-        {
-          if (thing[item].toString().toLowerCase().includes(searchForThis.toLowerCase()))
-          {
-            return true;
-          }
-        }
-        return false;
+        this.getSearchResults().then((results) => {
+          this.badges = results;
       });
+    }
+
+    async getSearchResults(value = '') {
+      const address = `/api/list?search=${value}`;
+      const results = await fetch(address).then((response) => {
+          if (response.ok) {
+              return response.json()
+          }
+          return [];
+      })
+      .then((data) => {
+          return data;
+      });
+
+      return results;
   }
+
+  async _handleSearchEvent(e) {
+    const term = e.detail.value;
+    this.badges = await this.getSearchResults(term);
+}
 
     static get styles() {
         return css`
