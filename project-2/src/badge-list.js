@@ -165,13 +165,9 @@ header {
 
 
         <h2>${this.list}</h2>
-        <div class="wrapper">
             ${this.badges.map(badge => html`
-            <div class="item">
                 <edu-badge name="${badge.name}" creator="${badge.creator}" image="${badge.image}" department="${badge.department}"></edu-badge>
-            </div>
             `)}
-        </div>
         `;
     }
 }
