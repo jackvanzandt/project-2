@@ -1,6 +1,6 @@
 export default async function handler(request, res) {
 
-    var list = [
+    const list = [
         {
             "name": "Caleb Pellerite",
             "creator": "Caleb",
@@ -33,12 +33,7 @@ export default async function handler(request, res) {
           }
 
     ];
-    list.map((badge) => {
-      badge.index = badge.name.toLowerCase() + " " + badge.creator.toLowerCase() + " " + badge.department.toLowerCase();
-    });
-    list = badge.filter((badge) => {
-      return badge.index.indexOf(search.toLowerCase()) > -1;
-    });
+    
     res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');
     res.setHeader("Access-Control-Allow-Credentials", "true");
     res.setHeader("Access-Control-Allow-Origin", "*");

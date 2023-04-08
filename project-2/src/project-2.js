@@ -113,11 +113,7 @@ header {
       padding: 10px;
     }
 
-    .searchBar{
-      width: 80%;
-      margin: left;
-      padding: 12px;
-    }
+    
   `;
 
    constructor() {
@@ -142,7 +138,7 @@ header {
         <div class="search-text">Explore our content in a self-guided manner. Want us to guide you through learning new skills? Try out Missions. Looking for other people with similar focus? Find them in Groups. Interested in viewing all the options within a certain subject area? You can do that with Topics.</div>
           <div class="input-container">
             <div class="searchBar">
-          <search-bar @value-changed="${this._handleSearchEvent}"></search-bar>
+          <search-bar @word-changed="${this.wordChanged}"></search-bar>
           </div>
         </div>
       </div>
@@ -151,7 +147,7 @@ header {
         <div class="listHeading">
           Looking for something brand spankin' new? Here are the most recently added badges!
         </div>
-        <badge-list></badge-list>
+        <badge-list searchForThis="${this.searchForThis}"></badge-list>
         
         
       </div>
