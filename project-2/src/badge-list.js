@@ -43,7 +43,7 @@ export class BadgeList extends LitElement {
 
     static get styles() {
         return css`
-      .search-container {
+.search-container {
 	background-color: #f2f2f2;
 	padding: 100px;
   width: 70%;
@@ -52,16 +52,16 @@ export class BadgeList extends LitElement {
   justify-content: center;
   margin: 0 auto;
   flex-direction: column;
-  
 }
+
 .explore-container {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   background-color: #d3dce4;
   display: flex;
-  flex-direction: column;
-  
+  flex-direction: column; 
 }
+
 .explore-container h1 {
   margin: 0;
   padding-top: 50px;
@@ -70,6 +70,7 @@ export class BadgeList extends LitElement {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color: #5b5a5a;
 }
+
 .search-container input[type="text"] {
 	padding: 20px;
 	border: none;
@@ -78,6 +79,7 @@ export class BadgeList extends LitElement {
 	width: 60%;
   margin: 0 10px 0 0;
 }
+
 .search-container button {
 	background-color: #4CAF50;
 	color: white;
@@ -86,6 +88,7 @@ export class BadgeList extends LitElement {
 	cursor: pointer;
 	font-size: 16px;
 }
+
 .badge {
 	background-color: #4CAF50;
 	color: #fff;
@@ -96,15 +99,18 @@ export class BadgeList extends LitElement {
 	border-radius: 5px;
 	cursor: pointer;
 }
+
 .badge:hover {
 	background-color: #3e8e41;
 }
+
 .search-text {
   font-size: 20px;
   font-family: sans-serif;
   margin-bottom: 20px;
   margin-right: 10px;
 }
+
 header {
   background-color: white;
   height: 80px;
@@ -113,6 +119,7 @@ header {
   padding: 0 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
+
 .logo {
   font-size: 18px;
   font-style: und;
@@ -120,17 +127,17 @@ header {
   color: #888;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
 .input-container {
   display: flex;
   align-items: center;
 }
+
 #search-input {
   margin-right: 10px;
   width: calc(100% - 120px);
 }
-#search-button {
-  margin-left: 10px;
-}
+
 .content-wrapper {
   overflow-y: scroll;
   height: 100vh;
