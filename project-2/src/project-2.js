@@ -139,7 +139,7 @@ header {
         <div class="listHeading">
           Looking for something brand spankin' new? Here are the most recently added badges!
         </div>
-        <badge-list></badge-list>
+        <badge-list searchForThis="${this.searchForThis}"></badge-list>
         
         
       </div>

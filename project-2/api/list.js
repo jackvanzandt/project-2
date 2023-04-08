@@ -11,14 +11,27 @@ export default async function handler(request, res) {
             "name": "A Person",
             "creator": "person",
             "image": "https://badgesapp.psu.edu/uploads/badge/image/337/APA_Style.png",
-            "department": "person at person"
+            "department": "Your Mom"
           },
           {
-            "name": "Bryan Ollendyke",
+            "name": "Web Teacher",
             "creator": "Bryan Ollendyke",
             "image": "https://badgesapp.psu.edu/uploads/badge/image/337/APA_Style.png",
             "department": "IST"
+          },
+          {
+            "name": "Short Guy",
+            "creator": "Jeffery Ned",
+            "image": "https://badgesapp.psu.edu/uploads/badge/image/337/APA_Style.png",
+            "department": "Athletics"
+          },
+          {
+            "name": "Winner",
+            "creator": "Daniel Jones",
+            "image": "https://badgesapp.psu.edu/uploads/badge/image/337/APA_Style.png",
+            "department": "New York Giants"
           }
+
     ];
     res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');
     res.setHeader("Access-Control-Allow-Credentials", "true");
