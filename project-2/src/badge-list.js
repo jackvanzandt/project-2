@@ -17,6 +17,8 @@ export class BadgeList extends LitElement {
         this.badges = [];
         this.list = 'Badge List';
         this.updateList();
+        this.searchForThis = '';
+        this.searchThis(this.badges,this.searchForThis);
     }
 
     async updateList(){
@@ -34,18 +36,23 @@ export class BadgeList extends LitElement {
        
     }
 
+    searchThis(items, searchForThis){
+      return items.filter((thing) => 
+      {
+        for (var item in thing)
+        {
+          if (thing[item].toString().toLowerCase().includes(searchForThis.toLowerCase()))
+          {
+            return true;
+          }
+        }
+        return false;
+      });
+  }
+
     static get styles() {
         return css`
-      :host{
-            display: block;
-        }
-        .box{
-            border: 2px solid black;
-            display: flex;
-        }
-        .item{
-            display: inline-flex;
-        }
+      
     `;
     }
 
@@ -59,7 +66,6 @@ export class BadgeList extends LitElement {
         <h2>${this.list}</h2>
             ${this.badges.map(badge => html`
                 <edu-badge name="${badge.name}" creator="${badge.creator}" image="${badge.image}" department="${badge.department}"></edu-badge>
-            </div>
             `)}
         `;
     }

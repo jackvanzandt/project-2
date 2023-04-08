@@ -1,18 +1,13 @@
 import { LitElement, html, css } from 'lit';
-import './badge-list.js'
+import './badge-list.js';
+import './search-bar.js';
 
 class Project2 extends LitElement {
   static get properties() {
     return {
-      name: {
-        type: String,
-        reflect: true
-      },
-      creator: { type: String},
-      image: {
-        type: String,
-      },
-      department: { type: String},
+    header: { type: String },
+    data: { type: Array },
+    searchForThis: { type: String }
     }
   }
 
@@ -119,6 +114,12 @@ header {
     }
   `;
 
+   constructor() {
+    super();
+    this.header = 'Badge Search';
+    this.searchForThis = '';
+  }
+
   render() {
     return html`
            <div class="content-wrapper">
@@ -130,8 +131,7 @@ header {
       <div class="search-container">
         <div class="search-text">Explore our content in a self-guided manner. Want us to guide you through learning new skills? Try out Missions. Looking for other people with similar focus? Find them in Groups. Interested in viewing all the options within a certain subject area? You can do that with Topics.</div>
           <div class="input-container">
-        <input type="text" id="search-input" placeholder="Search Content, Topics, and People">
-        <button id="search-button">Search</button>
+          <search-bar @word-changed="${this.wordChanged}"></search-bar>
         </div>
       </div>
 
