@@ -113,7 +113,11 @@ header {
       padding: 10px;
     }
 
-    
+    .searchBar{
+      width: 80%;
+      margin: left;
+      padding: 12px;
+    }
   `;
 
    constructor() {
