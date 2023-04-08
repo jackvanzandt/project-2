@@ -21,9 +21,9 @@ export class BadgeList extends LitElement {
         this.searchThis(this.badges,this.searchForThis);
     }
 
-    async updateList(){
+    updateList(){
        const address = '/api/list';
-       const data = await fetch(address).then((response) => {
+       fetch(address).then((response) => {
         if (response.ok) {
             return response.json()
         }
@@ -32,7 +32,7 @@ export class BadgeList extends LitElement {
     .then((data) => {
         this.badges = data;
     });
-       console.log(data);
+       
        
     }
 
