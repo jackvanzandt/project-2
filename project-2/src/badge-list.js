@@ -64,9 +64,10 @@ export class BadgeList extends LitElement {
 
 
         <h2>${this.list}</h2>
-            ${this.badges.map(badge => html`
-            
+        ${this.searchThis(this.badges,this.searchForThis).map(badge => html`
+              <div class="item">
                 <edu-badge name="${badge.name}" creator="${badge.creator}" image="${badge.image}" department="${badge.department}"></edu-badge>
+            </div>
             
             `)}
         `;
