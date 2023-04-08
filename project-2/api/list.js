@@ -36,7 +36,7 @@ export default async function handler(request, res) {
     list.map((badge) => {
       badge.index = badge.name.toLowerCase() + " " + badge.creator.toLowerCase() + " " + badge.department.toLowerCase();
     });
-    list = badge.filter((player) => {
+    list = badge.filter((badge) => {
       return badge.index.indexOf(search.toLowerCase()) > -1;
     });
     res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');
