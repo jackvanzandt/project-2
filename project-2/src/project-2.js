@@ -122,13 +122,10 @@ header {
 
    constructor() {
     super();
-    this.header = 'Badge Search';
-    this.searchForThis = '';
+  
   }
 
-  wordChanged(e) {
-    this.searchForThis = e.detail.value;
-  }
+
 
   render() {
     return html`
@@ -141,18 +138,16 @@ header {
       <div class="search-container">
         <div class="search-text">Explore our content in a self-guided manner. Want us to guide you through learning new skills? Try out Missions. Looking for other people with similar focus? Find them in Groups. Interested in viewing all the options within a certain subject area? You can do that with Topics.</div>
           <div class="input-container">
+            <div class="searchBar">
+          </div>
         </div>
       </div>
-
-      <div class="searchBar">
-          <search-bar @word-changed="${this.wordChanged}"></search-bar>
-          </div>
 
       <div class="badgeList">
         <div class="listHeading">
           Looking for something brand spankin' new? Here are the most recently added badges!
         </div>
-        <badge-list searchForThis="${this.searchForThis}"></badge-list>
+        <badge-list></badge-list>
         
         
       </div>
