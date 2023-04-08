@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import "./edu-badge.js";
+import "./search-bar.js";
 
 export class BadgeList extends LitElement {
     static get tag() {
