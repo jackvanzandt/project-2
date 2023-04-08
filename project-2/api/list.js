@@ -33,11 +33,11 @@ export default async function handler(request, res) {
           }
 
     ];
-    roster.map((badge) => {
-      badge.index = badge.name.toLowerCase() + " " + badge.position.toLowerCase() + " " + badge.top.toLowerCase();
+    list.map((badge) => {
+      badge.index = badge.name.toLowerCase() + " " + badge.creator.toLowerCase() + " " + badge.department.toLowerCase();
     });
-    list = roster.filter((player) => {
-      return player.index.indexOf(search.toLowerCase()) > -1;
+    list = badge.filter((player) => {
+      return badge.index.indexOf(search.toLowerCase()) > -1;
     });
     res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');
     res.setHeader("Access-Control-Allow-Credentials", "true");
