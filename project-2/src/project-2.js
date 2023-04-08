@@ -120,6 +120,10 @@ header {
     this.searchForThis = '';
   }
 
+  wordChanged(e) {
+    this.searchForThis = e.detail.value;
+  }
+
   render() {
     return html`
            <div class="content-wrapper">
